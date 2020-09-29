@@ -1,26 +1,10 @@
 package online.shop.entity;
 
-public class Order {
-    String id;
+public class Order extends Product{
+    int idOrder;
     String nameOrder;
-    String priceOrder;
+    double priceOrder;
     boolean completedOrder;
-
-    public boolean isCompletedOrder() {
-        return completedOrder;
-    }
-
-    public void setCompletedOrder(boolean completedOrder) {
-        this.completedOrder = completedOrder;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getNameOrder() {
         return nameOrder;
@@ -30,11 +14,27 @@ public class Order {
         this.nameOrder = nameOrder;
     }
 
-    public String getPriceOrder() {
+    public boolean isCompletedOrder() {
+        return completedOrder;
+    }
+
+    public void setCompletedOrder(boolean completedOrder) {
+        this.completedOrder = completedOrder;
+    }
+
+    public int getIdOrder() {
+        return idOrder;
+    }
+
+    public void setIdOrder(int idOrder) {
+        this.idOrder = idOrder;
+    }
+
+    public double getPriceOrder() {
         return priceOrder;
     }
 
-    public void setPriceOrder(String priceOrder) {
+    public void setPriceOrder(double priceOrder) {
         this.priceOrder = priceOrder;
     }
 }
