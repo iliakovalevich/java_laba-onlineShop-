@@ -1,4 +1,6 @@
-package online.shop;
+package online.shop.inputOutput;
+
+import java.util.List;
 
 public class InputOutputConsole {
 }

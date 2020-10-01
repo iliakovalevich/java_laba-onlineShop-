@@ -1,6 +1,6 @@
 package online.shop.dao.workWithEmployees;
 
-import online.shop.entity.Employee;
+import online.shop.entity.persons.Employee;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;

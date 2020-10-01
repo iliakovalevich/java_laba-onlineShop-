@@ -1,4 +1,4 @@
-package online.shop.entity;
+package online.shop.entity.orders;
 
 public class Order {
     private int idOrder;

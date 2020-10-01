@@ -1,7 +1,4 @@
-package online.shop.entity;
-
-import java.util.ArrayList;
-import java.util.List;
+package online.shop.entity.persons;
 
 public class Client extends Person {
     private int idClient;

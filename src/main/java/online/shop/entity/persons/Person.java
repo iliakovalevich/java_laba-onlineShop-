@@ -1,4 +1,4 @@
-package online.shop.entity;
+package online.shop.entity.persons;
 
 abstract class Person {
     private String firstName;

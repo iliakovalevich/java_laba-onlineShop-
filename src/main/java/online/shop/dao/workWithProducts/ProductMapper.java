@@ -1,6 +1,6 @@
 package online.shop.dao.workWithProducts;
 
-import online.shop.entity.Product;
+import online.shop.entity.orders.Product;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

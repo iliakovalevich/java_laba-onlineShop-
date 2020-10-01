@@ -1,4 +1,4 @@
-package online.shop.entity;
+package online.shop.entity.persons;
 
 public class Employee extends Person {
     private String passportNumber;

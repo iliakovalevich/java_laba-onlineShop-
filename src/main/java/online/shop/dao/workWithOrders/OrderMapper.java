@@ -1,6 +1,6 @@
 package online.shop.dao.workWithOrders;
 
-import online.shop.entity.Order;
+import online.shop.entity.orders.Order;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

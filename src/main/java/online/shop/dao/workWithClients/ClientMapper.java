@@ -1,7 +1,6 @@
 package online.shop.dao.workWithClients;
 
-import online.shop.entity.Client;
-import online.shop.entity.Employee;
+import online.shop.entity.persons.Client;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
