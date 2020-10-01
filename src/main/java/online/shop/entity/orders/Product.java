@@ -1,9 +1,9 @@
 package online.shop.entity.orders;
 
 public class Product {
-    protected int idProduct;
-    protected String nameProduct;
-    protected double priceProduct;
+    private int idProduct;
+    private String nameProduct;
+    private double priceProduct;
 
     public Product(int idProduct, String nameProduct, double priceProduct) {
         this.idProduct = idProduct;
