@@ -10,7 +10,6 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     private JdbcTemplate jdbcTemplate;
 
-
     public void setDataSource(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
