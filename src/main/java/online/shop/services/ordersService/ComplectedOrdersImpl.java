@@ -27,7 +27,7 @@ public class ComplectedOrdersImpl {
         OrderDaoImpl orderDao = new OrderDaoImpl();
         String orderName;
         double priceOrder;
-        orderName = product1.getNameProduct()+" "+product2.getNameProduct()+product3.getNameProduct();
+        orderName = product1.getNameProduct()+" "+product2.getNameProduct()+" "+product3.getNameProduct();
         priceOrder=product1.getPriceProduct()+product2.getPriceProduct()+product3.getPriceProduct();
         orderDao.createOrder(orderName,priceOrder);
     }
