@@ -10,7 +10,7 @@ import java.util.List;
 public class ClientDaoImpl implements ClientDao {
     private JdbcTemplate jdbcTemplate;
 
-    @Override
+
     public void setDataSource(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }

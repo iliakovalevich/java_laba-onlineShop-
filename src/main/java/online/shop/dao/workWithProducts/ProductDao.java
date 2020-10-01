@@ -6,8 +6,6 @@ import javax.sql.DataSource;
 import java.util.List;
 
 public interface ProductDao {
-    void setDataSource(DataSource dataSource);
-
     void createProduct(String nameProduct, double priceProduct);
 
     Product getProductById(int id);

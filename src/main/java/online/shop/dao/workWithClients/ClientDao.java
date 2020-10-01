@@ -6,7 +6,6 @@ import javax.sql.DataSource;
 import java.util.List;
 
 public interface ClientDao {
-    void setDataSource(DataSource dataSource);
 
     void createClient(String firstName, String lastName);
 

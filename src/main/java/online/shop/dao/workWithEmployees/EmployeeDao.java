@@ -6,10 +6,9 @@ import javax.sql.DataSource;
 import java.util.List;
 
 public interface EmployeeDao {
-    void setDataSource(DataSource dataSource);
 
     void createEmployee(String passportNumber, String firstName, String lastName, Integer age,
-                        String position, double salary, double workExperience) ;
+                        String position, double salary, double workExperience);
 
     Employee getEmployeeById(int id);
 

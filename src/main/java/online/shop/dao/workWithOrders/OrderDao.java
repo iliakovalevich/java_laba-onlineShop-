@@ -6,7 +6,6 @@ import javax.sql.DataSource;
 import java.util.List;
 
 public interface OrderDao {
-    void setDataSource(DataSource dataSource);
 
     void createOrder(String nameOrder, double priceOrder);
 

@@ -1,6 +1,7 @@
 package online.shop.dao.workWithEmployees;
 
 import online.shop.entity.persons.Employee;
+import online.shop.services.personServices.CheckExceptions;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
@@ -16,6 +17,8 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     public void createEmployee(String passportNumber, String firstName, String lastName, Integer age,
                                String post, double salary, double workExperience) {
+        CheckExceptions checkExceptions=new CheckExceptions();
+        checkExceptions.checkAge(age);
         String SQL = "INSERT INTO employees (passportNumber, firstName, lastName,age,position ,salary,workExperience) " +
                 "VALUES (?,?,?,?,?,?,?)";
         jdbcTemplate.update(SQL, passportNumber, firstName, lastName, age, post, salary, workExperience);
@@ -38,6 +41,8 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     public void updateEmployee(String passportNumber, String firstName, String lastName, Integer age,
                                String post, double salary, double workExperience) {
+        CheckExceptions checkExceptions=new CheckExceptions();
+        checkExceptions.checkAge(age);
         String SQL = "UPDATE employees SET firstName = ?, lastName = ?, age = ?, post = ?, salary = ?, workExperience = ? WHERE passportNumber = ?";
         jdbcTemplate.update(SQL, firstName, lastName, age, post, salary, workExperience, passportNumber);
     }
