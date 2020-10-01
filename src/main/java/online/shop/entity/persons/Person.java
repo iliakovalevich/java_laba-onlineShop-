@@ -8,5 +8,12 @@ abstract class Person {
         this.firstName=firstName;
         this.lastName=lastName;
     }
-    abstract void about();
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
 }
