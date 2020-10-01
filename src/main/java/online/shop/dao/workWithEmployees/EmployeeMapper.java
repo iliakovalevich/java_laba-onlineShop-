@@ -13,10 +13,9 @@ public class EmployeeMapper implements RowMapper {
         String firstName=rs.getString("firstName");
         String lastName=rs.getString("lastName");
         int age=rs.getInt("age");
-        String position=rs.getString("position");
+        String post=rs.getString("post");
         double salary=rs.getDouble("salary");
         double workExperience=rs.getDouble("workExperience");
-        Employee employee=new Employee(passportNumber,firstName,lastName,age,position,salary,workExperience);
-        return employee;
+        return new Employee(passportNumber,firstName,lastName,age,post,salary,workExperience);
     }
 }

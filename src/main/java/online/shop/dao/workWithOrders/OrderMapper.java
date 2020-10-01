@@ -13,7 +13,6 @@ public class OrderMapper implements RowMapper {
         int id = rs.getInt("idOrder");
         String nameOrder = rs.getString("nameOrder");
         double priceOrder = rs.getDouble("priceOrder");
-        Order order = new Order(id, nameOrder, priceOrder);
-        return order;
+        return new Order(id, nameOrder, priceOrder);
     }
 }

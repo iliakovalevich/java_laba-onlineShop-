@@ -12,8 +12,7 @@ public class ProductMapper implements RowMapper {
         int idProduct = rs.getInt("idProduct");
         String nameProduct = rs.getString("nameProduct");
         double priceProduct = rs.getDouble("priceProduct");
-        Product product = new Product(idProduct, nameProduct, priceProduct);
-        return product;
+        return new Product(idProduct, nameProduct, priceProduct);
     }
 
 }

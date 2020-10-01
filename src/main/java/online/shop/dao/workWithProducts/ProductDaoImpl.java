@@ -7,12 +7,10 @@ import javax.sql.DataSource;
 import java.util.List;
 
 public class ProductDaoImpl implements ProductDao {
-    private DataSource dataSource;
     private JdbcTemplate jdbcTemplate;
 
 
     public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
@@ -23,15 +21,12 @@ public class ProductDaoImpl implements ProductDao {
 
     public Product getProductById(int id) {
         String SQL = "SELECT * FROM products WHERE id = ?";
-        Product product =
-                (Product) jdbcTemplate.queryForObject(SQL, new Object[]{id}, new ProductMapper());
-        return product;
+        return (Product) jdbcTemplate.queryForObject(SQL, new Object[]{id}, new ProductMapper());
     }
 
     public List listProduct() {
         String SQL = "SELECT * FROM products";
-        List products = jdbcTemplate.query(SQL, new ProductMapper());
-        return products;
+        return jdbcTemplate.query(SQL, new ProductMapper());
     }
 
     public void removeProduct(int id) {

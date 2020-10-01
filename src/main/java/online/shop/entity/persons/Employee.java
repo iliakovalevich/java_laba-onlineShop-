@@ -3,15 +3,15 @@ package online.shop.entity.persons;
 public class Employee extends Person {
     private String passportNumber;
     private int age;
-    private String position;
+    private String post;
     private double salary;
     private double workExperience;
 
-    public Employee(String passportNumber, String firstName, String lastName, int age, String position, double salary, double workExperience) {
+    public Employee(String passportNumber, String firstName, String lastName, int age, String post, double salary, double workExperience) {
         super(firstName, lastName);
         this.passportNumber = passportNumber;
         this.age = age;
-        this.position = position;
+        this.post = post;
         this.salary = salary;
         this.workExperience = workExperience;
     }
@@ -43,12 +43,12 @@ public class Employee extends Person {
         }
     }
 
-    public String getPosition() {
-        return position;
+    public String getPost() {
+        return post;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
+    public void setPost(String post) {
+        this.post=post;
     }
 
     public double getSalary() {

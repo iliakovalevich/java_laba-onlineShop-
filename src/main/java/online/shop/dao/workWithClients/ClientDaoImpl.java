@@ -8,12 +8,10 @@ import javax.sql.DataSource;
 import java.util.List;
 
 public class ClientDaoImpl implements ClientDao {
-    private DataSource dataSource;
     private JdbcTemplate jdbcTemplate;
 
     @Override
     public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
@@ -26,16 +24,13 @@ public class ClientDaoImpl implements ClientDao {
     @Override
     public Client getClientById(int id) {
         String SQL = "SELECT * FROM clients WHERE id = ?";
-        Client client =
-                (Client) jdbcTemplate.queryForObject(SQL, new Object[]{id}, new ClientMapper());
-        return client;
+        return (Client) jdbcTemplate.queryForObject(SQL, new Object[]{id}, new ClientMapper());
     }
 
     @Override
     public List listClients() {
         String SQL = "SELECT * FROM clients";
-        List clients = jdbcTemplate.query(SQL, new ClientMapper());
-        return clients;
+        return jdbcTemplate.query(SQL, new ClientMapper());
     }
 
     @Override

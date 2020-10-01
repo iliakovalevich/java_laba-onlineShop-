@@ -7,12 +7,10 @@ import javax.sql.DataSource;
 import java.util.List;
 
 public class OrderDaoImpl implements OrderDao {
-    private DataSource dataSource;
     private JdbcTemplate jdbcTemplate;
 
     @Override
     public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
@@ -25,16 +23,13 @@ public class OrderDaoImpl implements OrderDao {
     @Override
     public Order getOrderById(int id) {
         String SQL = "SELECT * FROM orders WHERE id = ?";
-        Order order =
-                (Order) jdbcTemplate.queryForObject(SQL, new Object[]{id}, new OrderMapper());
-        return order;
+        return (Order) jdbcTemplate.queryForObject(SQL, new Object[]{id}, new OrderMapper());
     }
 
     @Override
     public List listOrder() {
         String SQL = "SELECT * FROM orders";
-        List orders = jdbcTemplate.query(SQL, new OrderMapper());
-        return orders;
+        return jdbcTemplate.query(SQL, new OrderMapper());
     }
 
     @Override
