@@ -1,9 +1,15 @@
 package online.shop.entity;
 
 public class Product {
-    int idProduct;
-    String nameProduct;
-    double priceProduct;
+    protected int idProduct;
+    protected String nameProduct;
+    protected double priceProduct;
+
+    public Product(int idProduct, String nameProduct, double priceProduct) {
+        this.idProduct = idProduct;
+        this.nameProduct = nameProduct;
+        this.priceProduct = priceProduct;
+    }
 
     public int getIdProduct() {
         return idProduct;

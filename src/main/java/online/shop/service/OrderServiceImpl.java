@@ -6,7 +6,7 @@ import online.shop.entity.Product;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderServiceImpl implements OrderService {
+public class OrderServiceImpl {
     Product product1 = new Product();
     Product product2 = new Product();
     Order order = new Order();
@@ -26,15 +26,11 @@ public class OrderServiceImpl implements OrderService {
         orders.add(order);
     }
 
-    public void delete(int id, String tableName) {
+    public void delete(int idOrder) {
 
     }
 
-    public void readyOrder(Order order) {
+    public void readyOrder(int idOrder) {
 
-    }
-
-    public List<Order> getAll(String tableName) {
-        return orders;
     }
 }

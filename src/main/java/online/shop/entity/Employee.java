@@ -1,17 +1,26 @@
 package online.shop.entity;
 
 public class Employee extends Person {
-    int age;
-    String position;
-    double salary;
-    double workExperience;
+    private String passportNumber;
+    private int age;
+    private String position;
+    private double salary;
+    private double workExperience;
 
-    public Employee(String firstName, String lastname, Sex sex, int age, String position, double salary, double workExperience) {
-        super(firstName, lastname, sex);
+    public Employee(String passportNumber,String firstName, String lastName, int age, String position, double salary, double workExperience) {
+        super(firstName,lastName);
+        this.passportNumber=passportNumber;
         this.age = age;
         this.position = position;
         this.salary = salary;
         this.workExperience = workExperience;
+    }
+    public String getPassportNumber() {
+        return passportNumber;
+    }
+
+    public void setPassportNumber(String passportNumber) {
+        this.passportNumber = passportNumber;
     }
 
     public int getAge() {
