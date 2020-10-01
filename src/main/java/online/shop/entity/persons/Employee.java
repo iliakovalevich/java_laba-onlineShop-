@@ -33,18 +33,7 @@ public class Employee extends Person {
     }
 
     public void setAge(int age) {
-        while ((true)) {
-            try {
-                if (age > 15 & age < 80) {
-                    this.age = age;
-                    break;
-                } else {
-                    throw new Exception("The input number must be between from 16 to 80!");
-                }
-            } catch (Exception exception){
-                exception.getMessage();
-            }
-        }
+       this.age=age;
     }
 
     public String getPost() {

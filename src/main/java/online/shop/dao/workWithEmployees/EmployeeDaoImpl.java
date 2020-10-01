@@ -1,6 +1,7 @@
 package online.shop.dao.workWithEmployees;
 
 import online.shop.entity.persons.Employee;
+import online.shop.services.personServices.CheckException;
 import online.shop.services.personServices.CheckExceptions;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -17,7 +18,20 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     public void createEmployee(String passportNumber, String firstName, String lastName, Integer age,
                                String post, double salary, double workExperience) {
-        CheckExceptions checkExceptions=new CheckExceptions();
+        CheckExceptions checkExceptions=new CheckExceptions(){
+            @Override
+            public void checkAge(int age) {
+                try {
+                    if (age > 15 & age < 80) {
+                        return;
+                    } else {
+                        throw new Exception("The input number must be between from 16 to 80!");
+                    }
+                } catch (Exception exception) {
+                    exception.getMessage();
+                }
+            }
+        };
         checkExceptions.checkAge(age);
         String SQL = "INSERT INTO employees (passportNumber, firstName, lastName,age,position ,salary,workExperience) " +
                 "VALUES (?,?,?,?,?,?,?)";
@@ -41,9 +55,23 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     public void updateEmployee(String passportNumber, String firstName, String lastName, Integer age,
                                String post, double salary, double workExperience) {
-        CheckExceptions checkExceptions=new CheckExceptions();
-        checkExceptions.checkAge(age);
+        CheckException checkException=new CheckException() {
+            @Override
+            public void checkAge(int age) {
+                try {
+                    if (age > 15 & age < 80) {
+                        return;
+                    } else {
+                        throw new Exception("The input number must be between from 16 to 80!");
+                    }
+                } catch (Exception exception) {
+                    exception.getMessage();
+                }
+            }
+        };
+        checkException.checkAge(age);
         String SQL = "UPDATE employees SET firstName = ?, lastName = ?, age = ?, post = ?, salary = ?, workExperience = ? WHERE passportNumber = ?";
         jdbcTemplate.update(SQL, firstName, lastName, age, post, salary, workExperience, passportNumber);
     }
+
 }
