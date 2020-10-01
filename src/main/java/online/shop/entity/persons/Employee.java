@@ -16,6 +16,10 @@ public class Employee extends Person {
         this.workExperience = workExperience;
     }
 
+    public Employee() {
+
+    }
+
     public String getPassportNumber() {
         return passportNumber;
     }

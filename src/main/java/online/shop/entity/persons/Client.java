@@ -8,6 +8,9 @@ public class Client extends Person {
         this.idClient = idClient;
     }
 
+    public Client() {
+    }
+
     public int getIdClient() {
         return idClient;
     }

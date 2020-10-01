@@ -6,13 +6,14 @@ import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class OrderMapper implements RowMapper {
+public class OrderMapper implements RowMapper<Order>{
 
     @Override
     public Order mapRow(ResultSet rs, int rowNum) throws SQLException {
-        int id = rs.getInt("idOrder");
-        String nameOrder = rs.getString("nameOrder");
-        double priceOrder = rs.getDouble("priceOrder");
-        return new Order(id, nameOrder, priceOrder);
+        Order order=new Order();
+        order.setIdOrder(rs.getInt("idOrder"));
+        order.setNameOrder(rs.getString("nameOrder"));
+        order.setPriceOrder(rs.getDouble("priceOrder"));
+        return order;
     }
 }

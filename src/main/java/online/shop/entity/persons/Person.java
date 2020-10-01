@@ -1,12 +1,15 @@
 package online.shop.entity.persons;
 
 abstract class Person {
-    private final String firstName;
-    private final String lastName;
+    private String firstName;
+    private String lastName;
 
-    public Person(String firstName,String lastName){
-        this.firstName=firstName;
-        this.lastName=lastName;
+    public Person() {
+    }
+
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public String getFirstName() {
@@ -15,5 +18,13 @@ abstract class Person {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }

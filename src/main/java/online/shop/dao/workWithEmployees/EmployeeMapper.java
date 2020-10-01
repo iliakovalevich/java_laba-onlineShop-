@@ -9,13 +9,14 @@ import java.sql.SQLException;
 public class EmployeeMapper implements RowMapper {
     @Override
     public Employee mapRow(ResultSet rs, int rowNum) throws SQLException {
-        String passportNumber=rs.getString("passportNumber");
-        String firstName=rs.getString("firstName");
-        String lastName=rs.getString("lastName");
-        int age=rs.getInt("age");
-        String post=rs.getString("post");
-        double salary=rs.getDouble("salary");
-        double workExperience=rs.getDouble("workExperience");
-        return new Employee(passportNumber,firstName,lastName,age,post,salary,workExperience);
+        Employee employee=new Employee();
+        employee.setPassportNumber(rs.getString("passportNumber"));
+        employee.setFirstName(rs.getString("firstName"));
+        employee.setLastName(rs.getString("lastName"));
+        employee.setAge(rs.getInt("age"));
+        employee.setPost(rs.getString("post"));
+        employee.setSalary(rs.getDouble("salary"));
+        employee.setWorkExperience(rs.getDouble("workExperience"));
+        return employee;
     }
 }

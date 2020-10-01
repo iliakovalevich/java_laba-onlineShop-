@@ -11,6 +11,10 @@ public class Order {
         this.priceOrder = priceOrder;
     }
 
+    public Order() {
+
+    }
+
     public String getNameOrder() {
         return nameOrder;
     }
