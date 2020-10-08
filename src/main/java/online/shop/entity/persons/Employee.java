@@ -1,13 +1,17 @@
 package online.shop.entity.persons;
 
-public class Employee extends Person {
+import java.io.Serializable;
+
+public class Employee extends Person implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String passportNumber;
     private int age;
     private String post;
     private double salary;
     private double workExperience;
 
-    public Employee(String passportNumber, String firstName, String lastName, int age, String post, double salary, double workExperience) {
+    public Employee(String firstName, String lastName,String passportNumber,
+                    int age, String post, double salary, double workExperience) {
         super(firstName, lastName);
         this.passportNumber = passportNumber;
         this.age = age;
@@ -63,6 +67,7 @@ public class Employee extends Person {
     @Override
     public String toString() {
         return "Employee{" +
+                super.toString()+
                 "passportNumber='" + passportNumber + '\'' +
                 ", age=" + age +
                 ", post='" + post + '\'' +

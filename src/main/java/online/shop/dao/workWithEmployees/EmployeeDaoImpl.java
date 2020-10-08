@@ -18,7 +18,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     public void createEmployee(String passportNumber, String firstName, String lastName, Integer age,
                                String post, double salary, double workExperience) {
-        CheckExceptions checkExceptions=new CheckExceptions(){
+        CheckExceptions checkExceptions = new CheckExceptions() {
             @Override
             public void checkAge(int age) {
                 try {
@@ -55,7 +55,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     public void updateEmployee(String passportNumber, String firstName, String lastName, Integer age,
                                String post, double salary, double workExperience) {
-        CheckException checkException=new CheckException() {
+        CheckException checkException = new CheckException() {
             @Override
             public void checkAge(int age) {
                 try {

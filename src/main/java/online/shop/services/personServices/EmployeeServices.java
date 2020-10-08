@@ -5,9 +5,12 @@ import online.shop.dao.workWithEmployees.EmployeeDaoImpl;
 import online.shop.entity.persons.Client;
 import online.shop.entity.persons.Employee;
 
+import java.io.*;
 import java.util.*;
 
-public class PersonServicesWithCollections {
+public class EmployeeServices implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     List<Employee> employeesList = new ArrayList<>();
 
     public void saveEmployee(Employee employee) {
@@ -48,9 +51,20 @@ public class PersonServicesWithCollections {
         }
     }
 
+    public List getAllEmployees(){
+        return employeesList;
+    }
+
+    public void getSerializableObject() throws IOException, ClassNotFoundException {
+        FileInputStream fileInputStream = new FileInputStream("E:\\ilya\\save.ser");
+        ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+        Employee employee =(Employee) objectInputStream.readObject();
+        System.out.println(employee);
+    }
+
     @Override
     public String toString() {
-        return "PersonServicesWithCollections{" +
+        return "EmployeeServices{" +
                 "employeesList=" + employeesList +
                 '}';
     }

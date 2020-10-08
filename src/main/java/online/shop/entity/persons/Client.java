@@ -1,6 +1,9 @@
 package online.shop.entity.persons;
 
-public class Client extends Person {
+import java.io.Serializable;
+
+public class Client extends Person implements Serializable {
+
     private int idClient;
 
     public Client(String firstName, String lastName, int idClient) {
@@ -19,4 +22,10 @@ public class Client extends Person {
         this.idClient = idClient;
     }
 
+    @Override
+    public String toString() {
+        return "Client{" + super.toString() +
+                "idClient=" + idClient +
+                '}';
+    }
 }
