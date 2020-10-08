@@ -33,7 +33,7 @@ public class Employee extends Person {
     }
 
     public void setAge(int age) {
-       this.age=age;
+        this.age = age;
     }
 
     public String getPost() {
@@ -41,7 +41,7 @@ public class Employee extends Person {
     }
 
     public void setPost(String post) {
-        this.post=post;
+        this.post = post;
     }
 
     public double getSalary() {
@@ -60,4 +60,14 @@ public class Employee extends Person {
         this.workExperience = workExperience;
     }
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "passportNumber='" + passportNumber + '\'' +
+                ", age=" + age +
+                ", post='" + post + '\'' +
+                ", salary=" + salary +
+                ", workExperience=" + workExperience +
+                '}';
+    }
 }
