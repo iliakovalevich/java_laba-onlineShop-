@@ -23,7 +23,6 @@ public class EmployeeDaoImpl implements EmployeeDao {
             public void checkAge(int age) {
                 try {
                     if (age > 15 & age < 80) {
-                        return;
                     } else {
                         throw new Exception("The input number must be between from 16 to 80!");
                     }
@@ -60,7 +59,6 @@ public class EmployeeDaoImpl implements EmployeeDao {
             public void checkAge(int age) {
                 try {
                     if (age > 15 & age < 80) {
-                        return;
                     } else {
                         throw new Exception("The input number must be between from 16 to 80!");
                     }

@@ -2,7 +2,6 @@ package online.shop.dao.workWithClients;
 
 import online.shop.entity.persons.Client;
 
-import javax.sql.DataSource;
 import java.util.List;
 
 public interface ClientDao {

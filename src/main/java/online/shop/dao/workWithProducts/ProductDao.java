@@ -2,7 +2,6 @@ package online.shop.dao.workWithProducts;
 
 import online.shop.entity.orders.Product;
 
-import javax.sql.DataSource;
 import java.util.List;
 
 public interface ProductDao {

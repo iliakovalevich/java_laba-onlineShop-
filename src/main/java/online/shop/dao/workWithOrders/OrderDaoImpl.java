@@ -23,7 +23,7 @@ public class OrderDaoImpl implements OrderDao {
     @Override
     public Order getOrderById(int id) {
         String SQL = "SELECT * FROM orders WHERE id = ?";
-        return (Order) jdbcTemplate.queryForObject(SQL, new Object[]{id}, new OrderMapper());
+        return jdbcTemplate.queryForObject(SQL, new Object[]{id}, new OrderMapper());
     }
 
     @Override

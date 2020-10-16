@@ -12,7 +12,7 @@ public class ClientServices implements Serializable {
     private static final long serialVersionUID = 1L;
 
 
-    List<Client> clientsList = new ArrayList<>();
+    final List<Client> clientsList = new ArrayList<>();
 
     public void saveClient(Client client) {
         clientsList.add(client);

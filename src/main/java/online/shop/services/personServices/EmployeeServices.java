@@ -1,8 +1,6 @@
 package online.shop.services.personServices;
 
-import online.shop.dao.workWithClients.ClientDaoImpl;
 import online.shop.dao.workWithEmployees.EmployeeDaoImpl;
-import online.shop.entity.persons.Client;
 import online.shop.entity.persons.Employee;
 
 import java.io.*;
@@ -11,7 +9,7 @@ import java.util.*;
 public class EmployeeServices implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    List<Employee> employeesList = new ArrayList<>();
+    final List<Employee> employeesList = new ArrayList<>();
 
     public void saveEmployee(Employee employee) {
         employeesList.add(employee);
