@@ -21,42 +21,42 @@ public class EmployeeServices implements Serializable {
     }
 
     public void removeEmployee(String passportNumber) {
-        ListIterator<Employee> employeeIterator = employeesList.listIterator();
-        int index = 0;
-        while (employeeIterator.hasNext()) {
-            Employee nextEmployee = employeeIterator.next();
-            if (nextEmployee.getPassportNumber().equals(passportNumber)) {
-                index = employeeIterator.nextIndex();
-                break;
-            }
-        }
-        employeesList.remove(index);
+        employeesList.stream().filter(e->!e.getPassportNumber().equals(passportNumber));
+//        ListIterator<Employee> employeeIterator = employeesList.listIterator();
+//        int index = 0;
+//        while (employeeIterator.hasNext()) {
+//            Employee nextEmployee = employeeIterator.next();
+//            if (nextEmployee.getPassportNumber().equals(passportNumber)) {
+//                index = employeeIterator.nextIndex();
+//                break;
+//            }
+//        }
+//        employeesList.remove(index);
     }
 
     public double getAllEmployeesSalary() {
         double sum = 0;
+        employeesList.stream().forEach(x->x.getSalary());
         for (Employee i : employeesList) {
             sum += i.getSalary();
         }
         return sum;
     }
 
-    public void printPostEmployees(String post){
-        for (Employee i : employeesList){
-            if (i.getPost().equals(post)){
-                System.out.println(i.toString());
-            }
-        }
+    public void printPostEmployees(String post) {
+        employeesList.stream().forEach(o -> {
+            System.out.println(o.getPost().toString());
+        });
     }
 
-    public List getAllEmployees(){
+    public List getAllEmployees() {
         return employeesList;
     }
 
     public void getSerializableObject() throws IOException, ClassNotFoundException {
         FileInputStream fileInputStream = new FileInputStream("E:\\ilya\\save.ser");
         ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-        Employee employee =(Employee) objectInputStream.readObject();
+        Employee employee = (Employee) objectInputStream.readObject();
         System.out.println(employee);
     }
 

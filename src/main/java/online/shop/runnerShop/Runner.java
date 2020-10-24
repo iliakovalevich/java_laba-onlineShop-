@@ -2,7 +2,10 @@ package online.shop.runnerShop;
 
 import online.shop.multithreading.WorkRead;
 import online.shop.multithreading.WorkWithThreads;
+import online.shop.services.ordersService.ProductService;
 import online.shop.services.ordersService.ProductServiceThreads;
+
+import java.util.List;
 
 public class Runner {
     public static void main(String[] args) {
@@ -35,10 +38,10 @@ public class Runner {
 //        for (String i : list){
 //            System.out.println(i);
 //        }
-        ProductServiceThreads productServiceThreads =new ProductServiceThreads();
-        Thread t1 = new Thread(new WorkWithThreads(productServiceThreads));
-        Thread t2 = new Thread(new WorkRead(productServiceThreads));
-        t1.start();
-        t2.start();
+//        ProductServiceThreads productServiceThreads =new ProductServiceThreads();
+//        Thread t1 = new Thread(new WorkWithThreads(productServiceThreads));
+//        Thread t2 = new Thread(new WorkRead(productServiceThreads));
+//        t1.start();
+//        t2.start();
     }
 }
