@@ -1,4 +1,4 @@
-package online.shop.services.personServices;
+package online.shop.services.clientsService;
 
 import online.shop.dao.workWithClients.ClientDaoImpl;
 import online.shop.entity.persons.Client;

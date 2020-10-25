@@ -1,4 +1,4 @@
-package online.shop.services.personServices;
+package online.shop.exceptions;
 
 public class CheckExceptions{
 

@@ -1,4 +1,4 @@
-package online.shop.services.ordersService;
+package online.shop.services.productsService;
 
 import online.shop.entity.orders.Product;
 
@@ -6,14 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SuppressWarnings("ALL")
-public class ProductServiceThreads {
+public class ProductService {
     final List<Product> productList = new ArrayList<>();
 
-    public synchronized boolean getNotNull(){
+    public boolean getNotNull(){
         return productList.size() > 0;
     }
 
-    public synchronized void saveProduct(Product product) {
+    public void saveProduct(Product product) {
         productList.add(product);
     }
 

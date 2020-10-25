@@ -1,15 +1,11 @@
 package online.shop.runnerShop;
 
+import online.shop.dao.workWithOrders.OrderDaoImpl;
+import online.shop.services.ordersService.ComplectedOrdersImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import online.shop.dao.workWithClients.ClientDaoImpl;
 import online.shop.dao.workWithProducts.ProductDaoImpl;
-import online.shop.dao.workWithClients.ClientDao;
-import online.shop.entity.orders.Product;
-import online.shop.multithreading.WorkWithThreads;
-import online.shop.services.ordersService.ProductService;
-import online.shop.services.ordersService.ProductServiceThreads;
-import java.util.List;
 
 public class Runner {
     public static void main(String[] args) {
@@ -19,6 +15,8 @@ public class Runner {
         productDao.listProduct().stream().forEach(System.out::println);
         ClientDaoImpl clientDaoImpl = (ClientDaoImpl) context.getBean("jdbcTemplateClientDao");
         clientDaoImpl.listClients().stream().forEach(System.out::println);
+        OrderDaoImpl orderDao = (OrderDaoImpl) context.getBean("jdbcTemplateOrderDao");
+
 
 
 

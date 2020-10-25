@@ -1,8 +1,8 @@
 package online.shop.dao.workWithEmployees;
 
 import online.shop.entity.persons.Employee;
-import online.shop.services.personServices.CheckException;
-import online.shop.services.personServices.CheckExceptions;
+import online.shop.exceptions.CheckException;
+import online.shop.exceptions.CheckExceptions;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
