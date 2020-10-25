@@ -24,16 +24,17 @@ public class ClientServices implements Serializable {
     }
 
     public void removeClient(int idClient) {
-        ListIterator<Client> clientListIterator = clientsList.listIterator();
-        int index = 0;
-        while (clientListIterator.hasNext()) {
-            Client nextClient = clientListIterator.next();
-            if (nextClient.getIdClient() == idClient) {
-                index = clientListIterator.nextIndex();
-                break;
-            }
-        }
-        clientsList.remove(index);
+        clientsList.stream().filter(c->!(c.getIdClient()==idClient));
+//        ListIterator<Client> clientListIterator = clientsList.listIterator();
+//        int index = 0;
+//        while (clientListIterator.hasNext()) {
+//            Client nextClient = clientListIterator.next();
+//            if (nextClient.getIdClient() == idClient) {
+//                index = clientListIterator.nextIndex();
+//                break;
+//            }
+//        }
+//        clientsList.remove(index);
     }
 
     public List getAllClients() {

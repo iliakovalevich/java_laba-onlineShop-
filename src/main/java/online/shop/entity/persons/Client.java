@@ -24,8 +24,9 @@ public class Client extends Person implements Serializable {
 
     @Override
     public String toString() {
-        return "Client{" + super.toString() +
-                "idClient=" + idClient +
+        return "Client{" +
+                "idClient=" + getIdClient() +", "+
+                super.toString() +
                 '}';
     }
 }

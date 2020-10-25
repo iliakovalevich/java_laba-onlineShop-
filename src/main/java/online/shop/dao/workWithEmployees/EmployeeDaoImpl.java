@@ -39,7 +39,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     public Employee getEmployeeById(int id) {
         String SQL = "SELECT * FROM employees WHERE id = ?";
-        return (Employee) jdbcTemplate.queryForObject(SQL, new Object[]{id}, new EmployeeMapper());
+        return jdbcTemplate.queryForObject(SQL, new Object[]{id}, new EmployeeMapper());
     }
 
     public List listEmployees() {

@@ -38,4 +38,13 @@ public class Order {
     public void setPriceOrder(double priceOrder) {
         this.priceOrder = priceOrder;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "idOrder=" + getIdOrder() +
+                ", nameOrder='" + getNameOrder() + '\'' +
+                ", priceOrder=" + getPriceOrder() +
+                '}';
+    }
 }

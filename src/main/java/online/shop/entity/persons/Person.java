@@ -30,7 +30,7 @@ abstract class Person {
 
     @Override
     public String toString() {
-        return "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'';
+        return "firstName='" + getFirstName() + '\'' +
+                ", lastName='" + getLastName() + '\'';
     }
 }

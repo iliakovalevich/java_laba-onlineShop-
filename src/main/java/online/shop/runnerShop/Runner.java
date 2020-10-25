@@ -1,16 +1,31 @@
 package online.shop.runnerShop;
 
-import online.shop.multithreading.WorkRead;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import online.shop.dao.workWithClients.ClientDaoImpl;
+import online.shop.dao.workWithProducts.ProductDaoImpl;
+import online.shop.dao.workWithClients.ClientDao;
+import online.shop.entity.orders.Product;
 import online.shop.multithreading.WorkWithThreads;
 import online.shop.services.ordersService.ProductService;
 import online.shop.services.ordersService.ProductServiceThreads;
-
 import java.util.List;
 
 public class Runner {
     public static void main(String[] args) {
-//        ApplicationContext context =
-//                new ClassPathXmlApplicationContext("jdbctemplate-config.xml");
+        ApplicationContext context =
+                new ClassPathXmlApplicationContext("jdbctemplate-config.xml");
+        ProductDaoImpl productDao = (ProductDaoImpl) context.getBean("jdbcTemplateProductDao");
+        productDao.listProduct().stream().forEach(System.out::println);
+        ClientDaoImpl clientDaoImpl = (ClientDaoImpl) context.getBean("jdbcTemplateClientDao");
+        clientDaoImpl.listClients().stream().forEach(System.out::println);
+
+
+
+
+
+
+
 //        Employee employee1 = new Employee("Vasya", "Petrov",
 //                "AB3425879", 25, "Senior", 1500, 3.5);
 //        Employee employee2 = new Employee("Petya", "Petrov",

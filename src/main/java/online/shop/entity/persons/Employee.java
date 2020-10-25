@@ -68,11 +68,11 @@ public class Employee extends Person implements Serializable {
     public String toString() {
         return "Employee{" +
                 super.toString()+
-                "passportNumber='" + passportNumber + '\'' +
-                ", age=" + age +
-                ", post='" + post + '\'' +
-                ", salary=" + salary +
-                ", workExperience=" + workExperience +
+                "passportNumber='" + getPassportNumber() + '\'' +
+                ", age=" + getAge() +
+                ", post='" + getPost() + '\'' +
+                ", salary=" + getSalary() +
+                ", workExperience=" + getWorkExperience() +
                 '}';
     }
 }

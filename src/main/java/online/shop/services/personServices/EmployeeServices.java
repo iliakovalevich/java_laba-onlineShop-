@@ -22,21 +22,10 @@ public class EmployeeServices implements Serializable {
 
     public void removeEmployee(String passportNumber) {
         employeesList.stream().filter(e->!e.getPassportNumber().equals(passportNumber));
-//        ListIterator<Employee> employeeIterator = employeesList.listIterator();
-//        int index = 0;
-//        while (employeeIterator.hasNext()) {
-//            Employee nextEmployee = employeeIterator.next();
-//            if (nextEmployee.getPassportNumber().equals(passportNumber)) {
-//                index = employeeIterator.nextIndex();
-//                break;
-//            }
-//        }
-//        employeesList.remove(index);
     }
 
     public double getAllEmployeesSalary() {
         double sum = 0;
-        employeesList.stream().forEach(x->x.getSalary());
         for (Employee i : employeesList) {
             sum += i.getSalary();
         }

@@ -10,7 +10,7 @@
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/onlineShopLaba"/>
         <property name="username" value="root"/>
-        <property name="password" value="10033223391"/>
+        <property name="password" value="root"/>
     </bean>
 
     <!-- Here we're defining studentJDBCTemplate bean -->
