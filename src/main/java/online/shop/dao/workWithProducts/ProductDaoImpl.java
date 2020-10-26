@@ -20,8 +20,8 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     public Product getProductById(int id) {
-        String SQL = "SELECT * FROM products WHERE id = ?";
-        return jdbcTemplate.queryForObject(SQL, new Object[]{id}, new ProductMapper());
+        String SQL = "SELECT * FROM products WHERE idProduct = ?";
+        return (Product) jdbcTemplate.queryForObject(SQL, new Object[]{id}, new ProductMapper());
     }
 
     public List listProduct() {

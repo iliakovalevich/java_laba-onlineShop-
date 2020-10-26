@@ -6,8 +6,6 @@ import java.util.List;
 
 public interface OrderDao {
 
-    void createOrder(Order order);
-
     void createOrder(String nameOrder, double priceOrder);
 
     Order getOrderById(int id);

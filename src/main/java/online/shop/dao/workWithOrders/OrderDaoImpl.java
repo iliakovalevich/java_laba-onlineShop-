@@ -13,11 +13,6 @@ public class OrderDaoImpl implements OrderDao {
     public void setDataSource(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
-    @Override
-    public void createOrder(Order order){
-        String SQL = "INSERT INTO orders (order.getName,order.getPrice) VALUES (?,?)";
-        jdbcTemplate.update(SQL,order.getNameOrder(),order.getPriceOrder());
-    }
 
     @Override
     public void createOrder(String nameOrder, double priceOrder) {

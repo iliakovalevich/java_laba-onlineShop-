@@ -2,37 +2,16 @@ package online.shop.services.productsService;
 
 import online.shop.entity.orders.Product;
 
-import java.util.ArrayList;
 import java.util.List;
 
-@SuppressWarnings("ALL")
-public class ProductService {
-    final List<Product> productList = new ArrayList<>();
+public interface ProductService {
+    void createProduct(String nameProduct, double priceProduct);
 
-    public boolean getNotNull(){
-        return productList.size() > 0;
-    }
+    List getAllProductsFromDB();
 
-    public void saveProduct(Product product) {
-        productList.add(product);
-    }
+    Product getProductByIdFromDB(int idProduct);
 
-    public synchronized Product getProductById(int id) {
-        return productList.get(id);
-    }
+    void removeProduct(int idProduct);
 
-    public List<Product> getAllProducts() {
-        return productList;
-    }
-
-    public void removeProductById(int id) {
-        productList.remove(id);
-    }
-
-    @Override
-    public String toString() {
-        return "ProductServiseThreads{" +
-                "productList=" + productList+
-                '}';
-    }
+    void updateProduct(int idProduct, String nameProduct, double priceProduct);
 }

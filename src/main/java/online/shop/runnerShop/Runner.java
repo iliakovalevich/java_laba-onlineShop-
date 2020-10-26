@@ -1,6 +1,8 @@
 package online.shop.runnerShop;
 
+import online.shop.dao.workWithClients.ClientDao;
 import online.shop.dao.workWithOrders.OrderDaoImpl;
+import online.shop.services.clientsService.ClientServices;
 import online.shop.services.ordersService.ComplectedOrdersImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -9,18 +11,19 @@ import online.shop.dao.workWithProducts.ProductDaoImpl;
 
 public class Runner {
     public static void main(String[] args) {
-        ApplicationContext context =
-                new ClassPathXmlApplicationContext("jdbctemplate-config.xml");
-        ProductDaoImpl productDao = (ProductDaoImpl) context.getBean("jdbcTemplateProductDao");
-        productDao.listProduct().stream().forEach(System.out::println);
-        ClientDaoImpl clientDaoImpl = (ClientDaoImpl) context.getBean("jdbcTemplateClientDao");
-        clientDaoImpl.listClients().stream().forEach(System.out::println);
-        OrderDaoImpl orderDao = (OrderDaoImpl) context.getBean("jdbcTemplateOrderDao");
-
-
-
-
-
+//        ApplicationContext context =
+//                new ClassPathXmlApplicationContext("jdbctemplate-config.xml");
+//        ProductDaoImpl productDao = (ProductDaoImpl) context.getBean("jdbcTemplateProductDao");
+//        productDao.listProduct().stream().forEach(System.out::println);
+//        ClientDaoImpl clientDaoImpl = (ClientDaoImpl) context.getBean("jdbcTemplateClientDao");
+////        ClientDaoImpl clientDaoImpl=new ClientDaoImpl();
+//        clientDaoImpl.listClients().stream().forEach(System.out::println);
+//        OrderDaoImpl orderDao = (OrderDaoImpl) context.getBean("jdbcTemplateOrderDao");
+//        ComplectedOrdersImpl complectedOrders = new ComplectedOrdersImpl();
+////        complectedOrders.complectedOrder(productDao.getProductById(1),productDao.getProductById(2));
+//        orderDao.listOrder().stream().forEach(System.out::println);
+        ClientServices clientServices = new ClientServices();
+        clientServices.getAllClientsFromDB().stream().forEach(System.out::println);
 
 
 

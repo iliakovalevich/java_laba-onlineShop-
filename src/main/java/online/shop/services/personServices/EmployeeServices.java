@@ -1,14 +1,18 @@
 package online.shop.services.personServices;
 
 import online.shop.dao.workWithEmployees.EmployeeDaoImpl;
+import online.shop.dao.workWithOrders.OrderDaoImpl;
 import online.shop.entity.persons.Employee;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.*;
 import java.util.*;
 
 public class EmployeeServices implements Serializable {
     private static final long serialVersionUID = 1L;
-
+    final ApplicationContext context = new ClassPathXmlApplicationContext("jdbctemplate-config.xml");
+    final EmployeeDaoImpl employeeDao = (EmployeeDaoImpl) context.getBean("jdbcTemplateEmployeeDao");
     final List<Employee> employeesList = new ArrayList<>();
 
     public void saveEmployee(Employee employee) {
@@ -16,7 +20,6 @@ public class EmployeeServices implements Serializable {
     }
 
     public void saveEmployeeFromDB() {
-        EmployeeDaoImpl employeeDao = new EmployeeDaoImpl();
         employeesList.addAll(employeeDao.listEmployees());
     }
 
@@ -34,7 +37,7 @@ public class EmployeeServices implements Serializable {
 
     public void printPostEmployees(String post) {
         employeesList.stream().forEach(o -> {
-            System.out.println(o.getPost().toString());
+            System.out.println(o.getPost());
         });
     }
 

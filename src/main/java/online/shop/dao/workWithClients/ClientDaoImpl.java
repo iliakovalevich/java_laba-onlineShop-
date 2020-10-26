@@ -2,16 +2,19 @@ package online.shop.dao.workWithClients;
 
 import online.shop.entity.persons.Client;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
 import java.util.List;
 
 public class ClientDaoImpl implements ClientDao {
+    private DataSource dataSource;
     private JdbcTemplate jdbcTemplate;
 
-
     public void setDataSource(DataSource dataSource) {
+        this.dataSource=dataSource;
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
